@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather</title>
+    <title>Help</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <p>Use this site to get your weather!</p>
+        <form action="#">
+            <input placeholder="Enter location here" type="text" name="search" id="search">
+            <button type="button" id='searchBtn'>Search</button>
+            <button type="button" id='resetBtn'>Reset</button>
+        </form>
+        <div class="formContent hideDisplay">
+            <div style="display: flex;">
+                <p>Location </p>
+                <p id="location"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Details: </p>
+                <p id="detail"></p>
+            </div>
+        </div>
+        <div class="errorForm hideDisplay">
+            <p id="error"></p>
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    {{>footer}}
+    <script src='/js/app.js'></script>
+</body>
+
+</html>
