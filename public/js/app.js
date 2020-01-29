@@ -1,5 +1,3 @@
-console.log("Client side javascript file is loaded!");
-
 document.getElementById("resetBtn").addEventListener("click", function(event) {
   document
     .getElementsByClassName("formContent")[0]
