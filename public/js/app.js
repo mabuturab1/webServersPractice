@@ -34,7 +34,7 @@ let processForData = value => {
       document.querySelector("#location").textContent = data.place;
       document.querySelector(
         "#detail"
-      ).textContent = `Currently the temperature is ${data.temperature}. There is ${data.precipProbability}% chances of rain. The weather is ${data.summary}`;
+      ).textContent = `Currently the temperature is ${data.temperature}. Highest temperature would be ${data.temperatureHigh} and lowest temperature would be ${data.temperatureLow}  There is ${data.precipProbability}% chances of rain. The weather is ${data.summary}`;
     });
   }
 };

@@ -1,17 +1,20 @@
 const request = require("request");
-getWeatherUpdate = (lat = 0, long = 0, place = "", callback) => {
+weatherUpdate = (lat = 0, long = 0, place = "", callback) => {
   request({ url: getURL(lat, long), json: true }, (error, { body }) => {
-    if (error) console.log("An Error occurred");
+    if (error) callback(error, undefined);
     else if (body.error) {
-      console.log("Unable to get weather data");
+      callback(error, undefined);
     } else {
       var { currently } = body;
       var { data: currentlyDaily } = body.daily;
+      console.log(currentlyDaily[0]);
       callback(undefined, {
         place,
         temperature: currently.temperature,
         precipProbability: currently.precipProbability,
-        summary: currentlyDaily[0].summary
+        summary: currentlyDaily[0].summary,
+        temperatureHigh: currentlyDaily[0].temperatureHigh,
+        temperatureLow: currentlyDaily[0].temperatureLow
       });
     }
   });
@@ -38,5 +41,5 @@ const getURL = (myLatitude, myLongitude) => {
 };
 module.exports = {
   findLocationData: findLocationData,
-  weatherUpdate: getWeatherUpdate
+  weatherUpdate: weatherUpdate
 };

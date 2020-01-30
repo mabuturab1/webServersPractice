@@ -55,7 +55,9 @@ app.get("/weather", (req, res) => {
         place: decodeURIComponent(response.place),
         temperature: decodeURIComponent(response.temperature),
         precipProbability: decodeURIComponent(response.precipProbability),
-        summary: decodeURIComponent(response.summary)
+        summary: decodeURIComponent(response.summary),
+        temperatureHigh: decodeURIComponent(response.temperatureHigh),
+        temperatureLow: decodeURIComponent(response.temperatureLow)
       });
   });
 });
