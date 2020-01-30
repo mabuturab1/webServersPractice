@@ -9,9 +9,7 @@ document.getElementById("resetBtn").addEventListener("click", function(event) {
 document.getElementById("searchBtn").addEventListener("click", function(event) {
   const value = document.querySelector("#search").value;
 
-  fetch(
-    "http://localhost:3000/weather?address=" + encodeURIComponent(value)
-  ).then(response => {
+  fetch("/weather?address=" + encodeURIComponent(value)).then(response => {
     processForData(response);
   });
 });
